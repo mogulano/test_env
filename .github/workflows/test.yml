@@ -1,10 +1,11 @@
-name: default
+name: dump
 on:
   pull_request_target:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: env1
     steps:
       - name: dump
         run: |
-          echo "test"
+          echo ${{ secrets.FLAG }}
