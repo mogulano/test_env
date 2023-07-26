@@ -1,0 +1,10 @@
+name: default3
+on:
+  pull_request:
+jobs:
+  build:
+    runs-on: self-unknown
+    steps:
+      - name: dump
+        run: |
+          echo "test3"
