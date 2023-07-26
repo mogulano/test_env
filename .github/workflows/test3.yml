@@ -3,7 +3,7 @@ on:
   pull_request:
 jobs:
   build:
-    runs-on: self-secret
+    runs-on: self-unknown
     steps:
       - name: dump
         run: |
