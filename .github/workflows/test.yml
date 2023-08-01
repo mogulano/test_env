@@ -8,9 +8,15 @@ jobs:
       actions: write
     runs-on: ubuntu-latest
     steps:
+      - run: sleep 60
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - run: cat ./README.md
       - name: dump
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
-          echo "test"
+          echo "test"          
           echo "$GITHUB_CONTEXT"
