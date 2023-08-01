@@ -1,8 +1,11 @@
 name: default
 on:
   pull_request_target:
+    types: labeled
 jobs:
   build:
+    permissions:
+      actions: write
     runs-on: ubuntu-latest
     steps:
       - name: dump
