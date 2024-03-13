@@ -2,9 +2,10 @@ name: default2
 on:
   pull_request:
 jobs:
+  hmm:
+    uses: mogulano/test_env/.github/workflows/test3.yml@main
   build:
     runs-on: ubuntu-latest
     steps:
       - run: |
           echo "test2"
-      - uses: mogulano/test_env/.github/workflows/test3.yml@main
