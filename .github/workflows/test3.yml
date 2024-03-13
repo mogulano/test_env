@@ -1,6 +1,8 @@
 name: comment
 on:
   issue_comment:
+  pull_request_target:
+  workflow_run:
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -8,5 +10,15 @@ jobs:
       - name: dump
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
+          NUMBER: ${{ github.event.number }}
+          HEAD_REF: ${{ github.head_ref }}
+          HEADDOTREF: ${{ github.event.pull_request.head.ref }}
+          HEADSHA: ${{ github.event.pull_request.head.sha }}
+          PULLREQUEST_NUMBER: ${{ github.event.pull_request.number }}
         run: |
+          echo "github.event.number is $NUMBER
+          echo "github.head_ref is $HEAD_REF"
+          echo "github.event.pull_request.head.ref is $HEADDOTREF"
+          echo "github.event.pull_request.head.sha is $HEADSHA"
+          echo "github.event.pull_request.number is $PULLREQUEST_NUMBER"
           echo "$GITHUB_CONTEXT"
