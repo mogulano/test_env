@@ -17,7 +17,7 @@ jobs:
           HEADSHA: ${{ github.event.pull_request.head.sha }}
           PULLREQUEST_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          echo "github.event.number is $NUMBER
+          echo "github.event.number is $NUMBER"
           echo "github.head_ref is $HEAD_REF"
           echo "github.event.pull_request.head.ref is $HEADDOTREF"
           echo "github.event.pull_request.head.sha is $HEADSHA"
