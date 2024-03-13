@@ -1,0 +1,12 @@
+name: comment
+on:
+  issue_comment:
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: dump
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo "$GITHUB_CONTEXT"
