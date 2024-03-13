@@ -5,6 +5,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: dump
-        run: |
+      - run: |
           echo "test2"
+      - uses: mogulano/test_env/.github/workflows/test3.yml@main
