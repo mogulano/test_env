@@ -4,8 +4,7 @@ on:
     types: labeled
 jobs:
   build:
-    permissions:
-      actions: write
+    permissions: read-all
     runs-on: ubuntu-latest
     steps:
       #- run: sleep 60
