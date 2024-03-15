@@ -1,6 +1,9 @@
 name: default4
 on:
-  pull_request:
+  issue_comment:
+
+permissions: {}
+
 jobs:
   build:
     runs-on: ubuntu-latest
