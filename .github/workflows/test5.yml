@@ -1,0 +1,15 @@
+on: pull_request
+
+jobs:
+  poison:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+      - uses: actions/cache@v2
+        with:
+          path: ~/poison
+          key: poison_key
+      - run: |
+          cat poison
