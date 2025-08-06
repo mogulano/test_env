@@ -3,6 +3,7 @@ on:
     types:
       - completed
     workflows: ["default"]
+    branches: main
 jobs:
   job1:
     runs-on: ubuntu-latest
