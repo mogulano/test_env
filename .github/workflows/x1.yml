@@ -3,8 +3,8 @@ on:
     types:
       - completed
     workflows: ["default"]
-    branches:
-      - 'ci_testing_*'
+    #branches:
+    #  - 'ci_testing_*'
 jobs:
   job1:
     runs-on: ubuntu-latest
