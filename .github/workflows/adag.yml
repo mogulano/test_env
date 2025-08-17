@@ -1,0 +1,8 @@
+on:
+  pull_request_review:
+jobs:
+  build:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{secrets.SECRET}}"
