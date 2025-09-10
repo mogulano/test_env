@@ -1,3 +1,5 @@
+permissions:
+  contents: write
 on:
   pull_request_review_comment:
   pull_request_review:
@@ -6,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "on review running"
+          echo "all good"
