@@ -1,0 +1,12 @@
+name: test6
+on:
+  pull_request:
+
+permissions: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "${{ toJson(github.event.pull_request) }}"
