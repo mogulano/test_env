@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: dump
         env:
-          GITHUB_CONTEXT: ${{ toJson(github.event.pull_request) }}
+          GITHUB_CONTEXT: ${{ toJson(github) }}
           NUMBER: ${{ github.event.number }}
           HEAD_REF: ${{ github.head_ref }}
           HEADDOTREF: ${{ github.event.pull_request.head.ref }}
