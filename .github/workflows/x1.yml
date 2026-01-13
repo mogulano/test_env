@@ -9,8 +9,6 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo "${{ github.event.pull_request }}"
       - name: dump
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
@@ -19,10 +17,12 @@ jobs:
           HEADDOTREF: ${{ github.event.pull_request.head.ref }}
           HEADSHA: ${{ github.event.pull_request.head.sha }}
           PULLREQUEST_NUMBER: ${{ github.event.pull_request.number }}
+          ISFORK: ${{ github.event.pull_request.head.repo.fork }}
         run: |
           echo "github.event.number is $NUMBER"
           echo "github.head_ref is $HEAD_REF"
           echo "github.event.pull_request.head.ref is $HEADDOTREF"
           echo "github.event.pull_request.head.sha is $HEADSHA"
           echo "github.event.pull_request.number is $PULLREQUEST_NUMBER"
+          echo "github.event.pull_request.head.repo.fork is $ISFORK"
           echo "$GITHUB_CONTEXT"
