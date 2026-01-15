@@ -9,6 +9,10 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
+      - name: test
+        run: |
+          gh pr checkout 39
+          git checkout deadbeef
       - name: dump
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
@@ -18,9 +22,6 @@ jobs:
           HEADSHA: ${{ github.event.pull_request.head.sha }}
           PULLREQUEST_NUMBER: ${{ github.event.pull_request.number }}
           ISFORK: ${{ github.event.pull_request.head.repo.fork }}
-        run: |
-          gh pr checkout 39
-          git checkout deadbeef
         run: |
           echo "github.event.number is $NUMBER"
           echo "github.head_ref is $HEAD_REF"
