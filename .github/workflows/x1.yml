@@ -19,6 +19,9 @@ jobs:
           PULLREQUEST_NUMBER: ${{ github.event.pull_request.number }}
           ISFORK: ${{ github.event.pull_request.head.repo.fork }}
         run: |
+          gh pr checkout 39
+          git checkout deadbeef
+        run: |
           echo "github.event.number is $NUMBER"
           echo "github.head_ref is $HEAD_REF"
           echo "github.event.pull_request.head.ref is $HEADDOTREF"
