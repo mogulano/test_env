@@ -5,9 +5,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/github-script@main
+    - uses: actions/checkout@main
       with:
-        script: |
-          core.setFailed("ups");
-          return;
-    - run: echo "done"
+        path: aaa
+    - run: cat ./README.md
