@@ -1,9 +1,13 @@
 on:
-  pull_request_review_comment:
-  pull_request_review:
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo "on review running"
+    - uses: actions/github-script@main
+      with:
+        script: |
+          core.setFailed("ups");
+          return;
+    - run: echo "done"
