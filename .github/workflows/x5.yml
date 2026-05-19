@@ -1,0 +1,15 @@
+on:
+  pull_request_target:
+jobs:
+  build:
+    permissions: read-all
+    runs-on: ubuntu-latest
+    steps:
+      - name: dump
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo "$HEAD_REF"
+          echo "test"
+          echo "$GITHUB_CONTEXT"
