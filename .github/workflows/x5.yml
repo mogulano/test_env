@@ -2,7 +2,7 @@ on:
   pull_request_target:
 jobs:
   build:
-    permissions: read-all
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: dump
