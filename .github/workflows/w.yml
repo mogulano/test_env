@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Download artifact'
-        uses: action/download-artifact@main
+        uses: actions/download-artifact@main
         with:
           name: pr_number
           # do not extract in the workspace dir that may contain executable scripts
@@ -20,7 +20,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 'Comment on PR'
-        uses: action/github-script@main
+        uses: actions/github-script@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
