@@ -1,0 +1,11 @@
+name: Trigger
+on:
+  pull_request:
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://evil.com
+    steps:
+      - run: echo "in pr"
