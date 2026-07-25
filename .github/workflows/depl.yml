@@ -1,0 +1,17 @@
+name: Run E2E tests
+on:
+  deployment_status:
+#permissions: {}
+jobs:
+  first:
+    runs-on: ubuntu-latest
+    if: github.event.deployment_status.environment == 'production'
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          echo "Running in environment: $ENV_NAME"
+        env:
+          ENV_NAME: ${{ github.event.deployment_status.environment }}
+      - env:
+          URL: ${{ github.event.deployment_status.environment_url }}
+        run: node ./test.js
