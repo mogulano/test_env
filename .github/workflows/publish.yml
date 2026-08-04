@@ -1,6 +1,6 @@
 on:
   workflow_run:
-    workflows: [CI, IS]
+    workflows: [Review processor]
     branches: [main]
     types: [completed]
 
