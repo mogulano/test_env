@@ -1,0 +1,9 @@
+name: IS
+on:
+  issue_comment:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "in issue comment"
